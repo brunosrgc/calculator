@@ -30,7 +30,11 @@ namespace Calculator
             case 3: Division(); break;
             case 4: Multiplication(); break;
             case 5: System.Environment.Exit(0); break;
-            default: Menu(); break;
+            default:
+                Console.Clear();
+                Console.WriteLine("Invalid input try again.");
+                Console.ReadKey();
+                Menu(); break;
           }
         }
         static void Soma()
@@ -52,13 +56,13 @@ namespace Calculator
         {
             Console.Clear();
             Console.Write("First Value: ");
-            float v1 = float.Parse(Console.ReadLine());
+            double v1 = double.Parse(Console.ReadLine());
             Console.Write("Second Value: ");
-            float v2 = float.Parse(Console.ReadLine());
+            double v2 = double.Parse(Console.ReadLine());
 
-            float resultSub = v1 - v2;
+            double resultSub = v1 - v2;
             Console.WriteLine("");
-            Console.WriteLine("The result of subtraction is: " + resultSub);
+            Console.WriteLine("The result of subtraction is: (" + resultSub + ")");
             Console.ReadKey();
             Menu();
         }
